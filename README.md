@@ -6,8 +6,8 @@ This repository contains various algorithms and data structures used in competit
 
 - **Fenwick Tree** - TODO
 - **Segment Tree** - TODO
-  - Regular - TODO
-  - Lazy - TODO
+  - Regular - DONE
+  - Lazy - DONE
   - Persistent - TODO
 - **Treap** - TODO
 - **MO's Algorithm (Square Root Decomposition)** - TODO
