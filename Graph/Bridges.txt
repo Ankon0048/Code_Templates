@@ -1,0 +1,66 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define pb push_back
+#define mk make_pair
+#define ll long long
+#define f first
+#define s second
+const ll N = 1e5+5;
+int X[4]={0,0,1,-1};
+int Y[4]={1,-1,0,0};
+#define inf 9223372036854775807
+vector<int> g[N];
+vector<int> low(N,0);
+vector<int> disc(N,0);
+int t = 0;
+vector<pair<int,int> > ans;
+void dfs(int node, int par){
+    t++;
+    low[node] = t;
+    disc[node] = t;
+    for(auto i : g[node]){
+        if(i==par){
+            continue;
+        }
+        if(!disc[i]){
+            dfs(i,node);
+            if(disc[node]<low[i]){
+                ans.pb({i,node});
+            }
+            low[node] = min(low[node],low[i]);
+        }
+        else{
+            low[node] = min(low[node],disc[i]);
+        }
+    }
+}
+void solve(){
+    int n,m;
+    cin>>n>>m;
+    for(int i=1;i<=m;i++){
+        int x,y;
+        cin>>x>>y;
+        g[x].pb(y);
+        g[y].pb(x);
+    }
+    for(int i=1;i<=n;i++){
+        if(!disc[i]){
+            dfs(i,i);
+        }
+    }
+    cout<<ans.size()<<endl;
+    for(auto i : ans){
+        cout<<i.f<<" "<<i.s<<endl;
+    }
+}
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+                 
+    int t=1;
+    //cin>>t;
+    while(t--){
+        solve();
+    }
+    return 0;
+}

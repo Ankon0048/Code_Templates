@@ -1,0 +1,61 @@
+const ll N = 2e5 + 3;
+vector<ll> adj[N];
+vector<ll> ap(N, 0);
+vector<ll> low(N, 0);
+vector<ll> disc(N, 0);
+ll Time;
+ll dfsAP(ll u, ll p)
+{
+    ll children = 0;
+    low[u] = disc[u] = ++Time;
+    for (ll &v : adj[u])
+    {
+        if (v == p)
+            continue; // we don't want to go back through the same path.
+                      // if we go back is because we found another way back
+        if (!disc[v])
+        { // if V has not been discovered before
+            children++;
+            dfsAP(v, u);           // recursive DFS call
+            if (disc[u] <= low[v]) // condition #1
+                ap[u] = 1;
+            low[u] = min(low[u], low[v]); // low[v] might be an ancestor of u
+        }
+        else                               // if v was already discovered means that we found an ancestor
+            low[u] = min(low[u], disc[v]); // finds the ancestor with the least discovery time
+    }
+    return children;
+}
+
+void AP()
+{
+    Time = 0;
+    ll n, m;
+    cin >> n >> m;
+    for (ll i = 0; i < m; i++)
+    {
+        ll u, v;
+        cin >> u >> v;
+        adj[--u].pb(--v);
+        adj[v].pb(u);
+    }
+    vector<ll> ans;
+    ll cnt = 0;
+    for (ll u = 0; u < n; u++)
+    {
+        if (!disc[u])
+            ap[u] = dfsAP(u, u) > 1;
+        if (ap[u])
+        {
+            cnt++;
+            ans.pb(u);
+        }
+    }
+    cout<<cnt<<endl;
+    for(auto i : ans){
+        cout<<i+1<<" ";
+    }
+    cout<<endl;
+}
+
+//Articulation Points
