@@ -5,48 +5,42 @@ This repository contains various algorithms and data structures used in competit
 ## 1. Data Structures (& Offline Query Algorithms)
 
 - **Fenwick Tree** - TODO
-- **Segment Tree** - TODO
+- **Segment Tree** - DONE
   - Regular - DONE
   - Lazy - DONE
-  - Persistent - TODO
 - **Treap** - TODO
 - **MO's Algorithm (Square Root Decomposition)** - TODO
 - **RMQ (Range Max/Min Query)**  
   - O(nlogn) pre-processing, O(1) query - TODO  
   - O(n) pre-processing, O(1) query - TODO
-- **DSU (Disjoint Set Union | Union Find)** - TODO
+- **DSU (Disjoint Set Union | Union Find)** - DONE
 
 ## 2. Trees
 
-- **DFS (Depth-First Traversal)** - TODO
-- **BFS (Breadth-First Traversal)** - TODO
-- **Tree Diameter** - TODO
+- **Tree Diameter** - DONE
 - **Euler Tour** - TODO
-- **DFS Tree** - TODO
 - **LCA (Least Common Ancestor)**  
-  - O(nlogn) pre-processing, O(logn) query - TODO  
-  - O(nlogn) pre-processing, O(1) query - TODO  
-  - O(n) pre-processing, O(1) query - TODO
+  - O(nlogn) pre-processing, O(logn) query - DONE  
+  - O(nlogn) pre-processing, O(1) query - DONE  
+  - O(n) pre-processing, O(1) query - DONE
 - **HLD (Heavy-Light Decomposition)** - TODO
 - **CD (Centroid Decomposition)** - TODO
 
 ## 3. Graphs
 
-- **DFS (Depth-First Traversal)** - TODO
-- **BFS (Breadth-First Traversal)** - TODO
-- **Topological Sorting** - TODO
+- **Topological Sorting** - DONE
 - **Shortest-Path Algorithms**  
-  - Dijkstra's Algorithm - TODO  
+  - Dijkstra's Algorithm - DONE  
   - Bellman-Ford's Algorithm - TODO  
   - Floyd-Warshall's Algorithm - TODO
 - **MST (Min/Max Spanning Tree)**  
-  - Kruskal's Algorithm - TODO  
-  - Prim's Algorithm - NO, I hate Prim
+  - Kruskal's Algorithm - DONE  
+  - Prim's Algorithm - DONE
 - **SCC (Strongly Connected Components)**  
-  - Kosaraju's Algorithm - TODO
+  - Kosaraju's Algorithm - DONE
 - **Find Bridges**  
-  - Tarjan's Algorithm - TODO
-- **Find Articulation Points** - Done
+  - Tarjan's Algorithm - DONE
+- **Find Articulation Points** - DONE
 - **MM (Maximum Bipartite Matching)** - Done
 - **Dynamic Connectivity** - TODO
 - **Minimum Vertex Cover** - TODO
